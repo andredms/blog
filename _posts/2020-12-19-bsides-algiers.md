@@ -103,7 +103,7 @@ Substitutes all spaces for NULL characters in x,
 print x
 ```
 
-Prints the final string.
+Prints the final string, which we then redirect the output of to trimmed.txt (via '> trimmed.txt'). 
 
 After running this, we now get a trimmed text file which looks a little something like…
 
