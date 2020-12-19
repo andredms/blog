@@ -82,19 +82,19 @@ I knew that in order to get the data we wanted, we needed to cut a few things ou
 
 After much messing around I came up with the following script using ``awk``, that did exactly the above, except for the last:
 ```
-awk '{x = ""; x = substr($0,5,50); gsub(/ +/,"",x); print x}' dump.txt > trimmed.txt
+awk '{x = ""; x = substr($0, 5, 50); gsub(/ +/, "", x); print x}' dump.txt > trimmed.txt
 ```
 
 Breaking this down:
 
 ```
-x=substr($0,5,50); 
+x = substr($0, 5, 50); 
 ```
 
 Creates a substring from characters 5 - 50. We start at 5 because we don’t require 0000 + the space (five total characters), and then go all the way to 50 as there’s 32 hex characters, 16 spaces and two spaces between that and the ASCII decoded string. 
 
 ```
-gsub(/ +/,"",x);
+gsub(/ +/, "", x);
 ```
 
 Substitutes all spaces for NULL characters in x,
