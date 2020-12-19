@@ -10,13 +10,13 @@ My team for this CTF was 0xTBD and myself and @Pix worked on this particular sol
 # The Challenge
 It’s Complicated My Pal
 
-Category: Forensics
+**Category:** Forensics
 
 
-Points: 500
+**Points:** 500
 
 
-Requirements: Wireshark, Python, Scapy, fcrackzip.
+**Requirements:** Wireshark, Python, Scapy, fcrackzip.
 
 
 >Hey pal, I was sniffing some packets and stumbled upon some weird traffic, no idea what it is though.
