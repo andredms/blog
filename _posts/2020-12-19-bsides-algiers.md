@@ -99,7 +99,7 @@ Prints the final string.
 
 After running this, we now get a trimmed text file which looks a little something like…
 
-![image](https://i.imgur.com/ewE8bah.png)
+![image](https://i.imgur.com/swWCARk.png)
 
 A simple tr command can get rid of the newlines for us: 
 
