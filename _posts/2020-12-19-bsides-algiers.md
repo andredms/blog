@@ -123,7 +123,8 @@ capture = rdpcap('capture.pcap') # our pcap file
 output = open('output.bin','wb') # save dumped data to output.bin
 
 for packet in capture:
-    if packet.haslayer(ICMP) and str(packet.getlayer(ICMP).type) == '8': # if packet is ICMP and type is 8 (request)
+    # if packet is ICMP and type is 8 (echo request)
+    if packet.haslayer(ICMP) and str(packet.getlayer(ICMP).type) == '8': 
         output.write(packet.load) # write packet data to output.bin
  ```
  
