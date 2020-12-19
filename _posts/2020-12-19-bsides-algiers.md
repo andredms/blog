@@ -155,7 +155,7 @@ As the name suggests…it cracks .zip files. I decided it’d be best to run it 
 fcrackzip -v -u -D -p rockyou.txt output.zip 
 ```
 
-Three minutes later, we got a match:
+Three minutes later, we got a match with 'craccer':
 
 ```
 found file 'flag.jpg', (size cp/uc 225389/225940, flags 9, chk ac92)
