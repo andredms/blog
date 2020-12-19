@@ -127,15 +127,14 @@ for packet in capture:
     if packet.haslayer(ICMP) and str(packet.getlayer(ICMP).type) == '8': 
         output.write(packet.load) # write packet data to output.bin
  ```
- 
-# Cracking Passwords
-Upon running this script, which essentially did what I described manually doing above, we finally got the data we needed in the form of output.bin. To ensure we’d saved it with the right extension, we ran:
+
+Upon running the Python script, which essentially did what I described manually doing above, we finally got the data we needed in the form of output.bin. To ensure we’d saved it with the right extension, we ran:
 
 ```
 file output.bin
 ```
 
-This output:
+which output:
 
 ```
 output.bin: Zip archive data, at least v2.0 to extract
@@ -143,9 +142,8 @@ output.bin: Zip archive data, at least v2.0 to extract
 
 Turns out, it wasn’t actually a .jpg we were getting - but rather a .zip file which more than likely contained a .jpg. We thought that surely after all this we’d be able to extract the .zip file and grab the flag no problem, however, it wasn’t so easy as the file was password protected.
 
-We weren’t prepared to dive back into Wireshark to try find a key for it somewhere, as it wasn’t even guaranteed to be in there, so I did some Googling for a zip cracker tool and came across the following: 
-
-fcrackzip
+# Cracking Passwords
+We weren’t prepared to dive back into Wireshark to try find a key for the .zip somewhere, as it wasn’t even guaranteed to be in there, so I did some Googling for a zip cracker tool and came across the following: [frackzip](https://github.com/hyc/fcrackzip)
 
 As the name suggests…it cracks zips given a supplied wordlist. I decided it’d be best to run it against a common list of passwords, so I used rockyou.txt and ran frackzip with the flags options:
 
