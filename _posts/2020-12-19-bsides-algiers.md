@@ -147,9 +147,9 @@ output.bin: Zip archive data, at least v2.0 to extract
 Turns out, it wasn’t actually a .jpg we were getting - but rather a .zip file which contained a .jpg. We thought that surely after all this we’d be able to extract the .zip file and grab the flag no problem, however, it wasn’t so easy as the file was password protected.
 
 # Cracking Passwords
-We weren’t prepared to dive back into Wireshark to try find a key for the .zip somewhere, as it wasn’t even guaranteed to be in there, so I did some Googling for a zip cracker tool and came across the following: [frackzip](https://github.com/hyc/fcrackzip)
+We weren’t prepared to dive back into Wireshark to try find a key for the .zip somewhere, as it wasn’t even guaranteed to be there, so I did some Googling for a .zip cracker tool and came across the following: [frackzip](https://github.com/hyc/fcrackzip)
 
-As the name suggests…it cracks .zip files given a wordlist. I decided it’d be best to run it against a common list of passwords, so I used [rockyou.txt](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) and ran frackzip with the flags options:
+As the name suggests…it cracks .zip files given a wordlist. I decided it’d be best to run it against a common list of passwords, so I used [rockyou.txt](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) and ran the program with the following flags:
 
 ```
 fcrackzip -v -u -D -p rockyou.txt output.zip 
@@ -169,6 +169,6 @@ We unzipped the archive, opened the image and got the flag!
 ![image](https://i.imgur.com/ztY0ANV.jpg)
 
 # What did I learn?
-1) There's always a simpler, or more automated way to filter network traffic.
+1) There's always a simpler or more automated way to filter network traffic.
 2) ICMP tunelling is super cool.
 3) Googling gets the job done. 
