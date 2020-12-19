@@ -180,7 +180,7 @@ We unzipped the archive, opened the image and got the flag!
 ![image](https://i.imgur.com/ztY0ANV.jpg)
 
 # What did I learn?
-1) There's always a simpler or more automated way to filter network traffic.
+1) There's always a simpler or more automated way to filter network traffic (I've been brushing up on Scapy since completing the challenge). 
 
 
 2) ICMP tunelling is super cool.
