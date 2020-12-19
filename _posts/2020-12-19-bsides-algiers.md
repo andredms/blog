@@ -180,3 +180,6 @@ We unzipped the archive, opened the image and got the flag!
 
 
 3) Googling gets the job done. 
+
+
+4) The ``xxd`` tool...after the challenge had finished.
