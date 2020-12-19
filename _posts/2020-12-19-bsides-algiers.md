@@ -111,7 +111,7 @@ tr -d "\n" < trimmed,txt > trimmed2.txt
 
 ![image](https://i.imgur.com/uEvVXs1.png)
 
-We were now one step closer to getting the flag, however the ICMP header fields stood in the way (i.e. the dead0000beefcafe0000babe IPv6 addresses, which were definitely not part of the data we wanted). Looking at the structure of an ICMP packet, we saw that we could ignore the first 84 characters and just get the remaining 96 characters (e.g. the blue highlighted part in the non-modified payload):
+We were now one step closer to getting the flag, however the ICMP header fields stood in the way (i.e. the dead0000beefcafe0000babe IPv6 addresses, which were definitely not part of the data we wanted). Looking at the structure of an ICMP packet, we saw that we could ignore the first 84 characters and just get the remaining 96 characters (e.g. the blue highlighted part in the non-modified payload), which would give us the data we needed:
 
 ![image](https://i.imgur.com/IUDRT1C.png)
 
