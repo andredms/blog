@@ -39,6 +39,7 @@ This lets us know that there’s some form of exfiltration going on, or ICMP tun
 
 One thing we immediately tried looking for is the .jpg header signature (ffd8) to check that it wasn’t just a red herring. To our (not so much) surprise, packet 1908 contained it. 
 
+# Extracting Data
 We now knew that there was an image being tunnelled through ICMP, but, as you could imagine, there was the issue of actually extracting it from the network capture. This is where some great, and not so great, solutions were born.
 
 Firstly, I figured that all the data we needed would be being transferred via echo requests from 192.168.1.200 -> 185.245.99.2. We wouldn’t really need to worry about the replies from the client or the (no response found!) packets, as they wouldn’t actually contain the data being transferred. I created a new refined filter so we could prepare the ICMP payloads for dumping:
@@ -94,7 +95,8 @@ tr -d "\n" < trimmed,txt > trimmed2.txt
 
 We were now one step closer to getting the flag, however the ICMP header fields stood in the way (i.e. the dead0000beefcafe0000babe IPv6 addresses, which were definitely not part of the data we wanted). Looking at the structure of an ICMP packet, we saw that we could ignore the first 84 characters and just get the remaining 96 characters:
 
-But…before writing another convoluted script to do this and continuing down this painful manual path, Pix suggested that we use Scapy to grab the pcap data and dump the hex, which I think anyone can agree is a far more elegant and logical solution. I’m not entirely sure why I didn’t think of this myself! We came up with the following Python script:
+# More Automation 
+Before writing another convoluted script to do this and continuing down this painful manual path, Pix suggested that we use Scapy to grab the pcap data and dump the hex, which I think anyone can agree is a far more elegant and logical solution. I’m not entirely sure why I didn’t think of this myself...but we came up with the following Python script:
 
 ```python
 from scapy.all import *
@@ -109,6 +111,7 @@ for packet in capture:
         output.write(packet.load) # write packet data to output.bin
  ```
  
+# Cracking Passwords
 Upon running this script, which essentially did what I described manually doing above, we finally got the data we needed in the form of output.bin. To ensure we’d saved it with the right extension, we ran:
 
 ```
