@@ -4,11 +4,11 @@ title: About
 permalink: /about/
 ---
 
-3rd year Cyber Security student at Curtin University
+Cyber Security student at Curtin University. Lookign to get more into forensics and CTFs. 
 
 ### Information
 
-A place to include any other types of information that you'd like to include about yourself.
+Enjoy design and currently working as a front-end developer. 
 
 ### Contact 
 
