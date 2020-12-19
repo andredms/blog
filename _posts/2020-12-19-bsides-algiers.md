@@ -8,7 +8,7 @@ BSides Algiers came to a close late last night, and although having slightly har
 My team for this CTF was 0xTBD. @Pix and I worked on this particular solution together.
 
 # The Challenge
-It’s Complicated My Pal
+**Name:** It’s Complicated My Pal
 
 **Category:** Forensics
 
