@@ -112,10 +112,10 @@ After running this, we now get a trimmed text file which looks a little somethin
 A simple tr command can get rid of the newlines for us: 
 
 ```
-tr -d "\n" < trimmed,txt > trimmed2.txt
+tr -d "\n" < trimmed.txt > trimmed2.txt
 ```
 
-(-d for delete, "\n" for new line, '<' to input trimmed.txt, '>' to output trimmed2.txt)
+(-d for delete, "\n" for new line)
 
 ![image](https://i.imgur.com/uEvVXs1.png)
 
