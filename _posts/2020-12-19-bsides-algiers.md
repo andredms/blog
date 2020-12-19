@@ -105,7 +105,7 @@ A simple tr command can get rid of the newlines for us:
 tr -d "\n" < trimmed,txt > trimmed2.txt
 ```
 
-(-d for delete, "\n" for new line, input trimmed.txt, output trimmed2.txt
+(-d for delete, "\n" for new line, '<' to input trimmed.txt, '>' to output trimmed2.txt)
 
 ![image](https://i.imgur.com/uEvVXs1.png)
 
