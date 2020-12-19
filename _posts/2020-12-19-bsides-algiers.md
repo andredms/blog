@@ -62,11 +62,11 @@ Prior to this challenge, I had never extracted payloads out of packets, but Goog
 
 ![image](https://i.imgur.com/6deWChv.png)
 
-…which then dumped the hex payloads from the packets to dump.txt 
+…which then dumped the hex payloads from the packets to dump.txt - below is a small sample of what the file looked like:
 
 ![image](https://i.imgur.com/Um4uudc.png)
 
-I knew that in order to just get the data we wanted, we needed to cut a few things out:
+I knew that in order to get the data we wanted, we needed to cut a few things out:
 
 1) The 0000, 0010, 0020 part to the left hand side of the hex.
 2) The ASCII decoded part to the right hand side of the hex.
