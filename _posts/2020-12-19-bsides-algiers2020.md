@@ -97,7 +97,7 @@ Creates a substring from characters 5 - 50. We start at 5 because we don’t req
 gsub(/ +/, "", x);
 ```
 
-Substitutes all spaces for NULL characters in x,
+Substitutes all spaces for NULL characters in x.
 
 ```
 print x
