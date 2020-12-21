@@ -155,7 +155,7 @@ output.bin: Zip archive data, at least v2.0 to extract
 Turns out, it wasn’t actually a .jpg we were getting - but rather a .zip file which contained a .jpg. We thought that surely after renaming it to ``output.zip`` we’d be able to extract the file and grab the flag no problem, however it wasn’t so easy as the file was password protected.
 
 # Cracking Passwords
-We weren’t about to dive back into Wireshark to try find a key for the .zip somewhere, as it wasn’t even guaranteed to be there, so I did some Googling for a .zip cracker tool and came across the following: [frackzip](https://github.com/hyc/fcrackzip)
+We weren’t about to dive back into Wireshark to try find a key for the .zip somewhere, as it wasn’t even guaranteed to be there, so I did some Googling for a .zip cracker tool and came across the following: [frackzip](https://github.com/hyc/fcrackzip).
 
 As the name suggests…it cracks .zip files. I decided it’d be best to run it against a common list of passwords, so I used [rockyou.txt](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) and ran the program with the following flags:
 
