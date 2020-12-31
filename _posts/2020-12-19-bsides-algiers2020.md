@@ -1,6 +1,8 @@
 ---
 layout: post
 title: BSides Algiers 2020 - Forensics 
+description: BSides Algiers came to a close earlier, and although having slightly harder challenges than what I’ve done before, it was a great learning experience. This writeup will be focusing on the forensics category and the challenge 'It’s Complicated My Pal'.
+image: https://i.imgur.com/iQSJG9W.png
 ---
 
 BSides Algiers came to a close earlier, and although having slightly harder challenges than what I’ve done before, it was a great learning experience. This writeup will be focusing on the forensics category and the challenge 'It’s Complicated My Pal'.
