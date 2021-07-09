@@ -76,12 +76,6 @@ We can even view the longitutde and latitude of where the photo was taken by loo
 
 It's easy to recover deleted photos off a device through using tools such as [iThmb Converter](https://www.ithmbconverter.com/). Simply copy all ```ithmb``` files and convert them from the above directory. 
 
-![](https://i.imgur.com/xBKvQQe.png)
-
-We can even view the longitutde and latitude of where the photo was taken by looking at the metadata (on macOS, right click the image > Get Info). 
-
-![](https://i.imgur.com/3Rxqogz.png)
-
 ### Texts 
 
 ```/private/var/mobile/Library/SMS```
