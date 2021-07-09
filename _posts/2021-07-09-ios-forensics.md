@@ -18,7 +18,7 @@ Jailbreaking essentially replaces the firmware partition with a hacked version t
 
 # Definitions
 ### Database
-A structured way to organise data. Mobile devices often use SQLite - for example, applications such as Calendar, Text, Notes, Photos and Address Book use it on iOS.
+A structured way to organise data. Mobile devices often use SQLite - for example, applications such as Calendar, Text, Notes, Photos and Address Book on iOS. 
 
 ### Plist 
 
