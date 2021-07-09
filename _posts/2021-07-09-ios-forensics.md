@@ -4,7 +4,7 @@ title: iOS Forensics in 2021
 description: I'm beginning to delve into computer forensics and hopefully create a habit out of exploring new forensic techniques on devices. Here's my first guide for an iOS device.
 ---
 
-I'm beginning to delve into computer forensics and hopefully create a habit out of exploring new forensic techniques on devices. Here's my first guide for an iOS device (note - these steps have only been tested and provded on iPhone X and lower). There are many different ways to acquire data from a sized device, however this guide will focus on the most common way - [jailbreaking](https://www.kaspersky.com/resource-center/definitions/what-is-jailbreaking).
+I've been wanting to get some hands-on experience with computer forensics and hopefully create a habit out of exploring new forensic techniques on devices. This is my first experience in doing so on an old iPhone 7 I picked up off GumTree for free (and performed a factory reset on). There are many different ways to acquire data from a sized device, however this guide will focus on the most common way - [jailbreaking](https://www.kaspersky.com/resource-center/definitions/what-is-jailbreaking).
 
 Jailbreaking essentially replaces the firmware partition with a hacked version that allows for the installation of tools not normally available (such as OpenSSH). This walkthrough will be on a macOS device using Big Sur. 
 
@@ -22,7 +22,7 @@ A structured way to organise data. Mobile devices often use SQLite - for example
 
 ### Plist 
 
-A plist (property list) is a data file that stores information on iOS and OSX operating systems. A plsit can store strings, dates, boolean values, numbers and binary values. Browsing history, favourites and configuration data can be stored in a plist.
+A plist (property list) is a data file that stores information on iOS and OSX operating systems. A plsit can store strings, dates, boolean values, numbers and binary values. 
 
 # Notes
 * In a real world scenario, it may be wise to turn the iPhone on to airplane mode to prevent a third-party from tampering with any evidence through remote access. 
@@ -44,27 +44,27 @@ Scroll to the ```checkra1n``` application on the device's lockscreen and install
 
 Once that's finished, open up Cydia, navigate to ```Search``` and install [OpenSSH](https://www.openssh.com/). 
 
-Next, we'll transfer the files of interest from the sized device to our forensics station. 
+Next, we'll transfer the files of interest from the seized device to our forensics station. 
 
 # File Transfer
 
-We'll now need to find the IP address of our device - to do this, navigating to Settings > Wi-Fi and tap the ```i``` icon next to the connected network name. Locate the ```IP Address``` field under ```IPV4 Addresses``` and keep it in mind. 
+We'll now need to find the IP address of our device - to do this, neviate to Settings > Wi-Fi and tap the ```i``` icon next to the connected network name. Locate the ```IP Address``` field under ```IPV4 Addresses``` and take note of it.
 
 Open up a terminal on your forensics station and type the following: ```scp -r root@<iphoneIP>:/private/var/mobile/ ~/Desktop``` to copy all files in the ```private/var/mobile``` directory to our forensics station. This directory contains many files that will help us build a case. If prompted for a password, the default is ```alpine```.
 
 # Building a Case
 
-There's a lot to filter through here, however, there are specific files that are of special interest to us. If you don't feel like copying the entire ```/mobile``` directory feel free to pick and choose from below:
+There's a lot to filter through here, however, there are some specific files that are of interest to us. If you don't feel like copying the entire ```/mobile``` directory feel free to pick and choose from below:
 
 ### Images
 
 ```private/var/mobile/media/DCIM```
 
-Images are located within ```private/var/mobile/media/DCIM```. Photos within the ```100APPLE``` directory indiciate that the photo was taken on the device itself - sequential numbering is used to show the order in which the photos were taken, e.g. IMG_0001. If there is a number missing in the sequence of photo files, one can assume that the photo was deleted. 
+Images are located within ```private/var/mobile/media/DCIM```. Photos within the ```100APPLE``` directory indiciate that the photo was taken on the device itself - sequential numbering is used to show the order in which the photos were taken, e.g. IMG_0001 would be the first photo a device took. If there is a number missing in the sequence of photo files, one can assume that the photo was deleted. 
 
 ![](https://i.imgur.com/xBKvQQe.png)
 
-We can even view the longitutde and latitude of where the photo was taken by looking at the metadata (on macOS, right click the image file > Get Info). 
+We can even view the longitutde and latitude of where the photo was taken by looking at the metadata (on macOS, right click the image > Get Info). 
 
 ![](https://i.imgur.com/3Rxqogz.png)
 
@@ -72,18 +72,19 @@ We can even view the longitutde and latitude of where the photo was taken by loo
 
 ```/private/var/mobile/Library/SMS```
   
-Text messages are located within the ```sms.db``` - this houses both existing and deleted conversations. The tables 'message' and 'attatchments' will contain the most interesting information. The message table contains a row for each message - each row contains the following information:
+Text messages are located within ```sms.db``` - this houses both existing and deleted conversations. The tables 'message' and 'attatchments' will contain the most interesting information. The message table contains a row for each message - each row contains the following information:
 
 * Recieving phone number.
 * Message body.
+* Date sent.
 * 'flags' which tell if the message was sent (3) or recieved (2).
 * 'read' which tells if the message was read (1).
 
-Here we can see a message from our sized device saying ```Put the money in the bag!```. 
+Here we can see a message from our seized device to another with the message: ```Put the money in the bag!```. 
 
 ![](https://i.imgur.com/MFjpYwP.png)
 
-If we check the ```attatchments``` table we can see that the person also included ```IMG_0002.HEIC``` with the text (which we found within ```private/var/mobile/media/DCIM/100APPLE``` earlier):
+If we check the ```attatchments``` table we can see that the person also included ```IMG_0002.HEIC``` with the SMS (which we found within ```private/var/mobile/media/DCIM/100APPLE``` earlier):
 
 ![](https://i.imgur.com/R24b88B.png)
 
@@ -91,7 +92,7 @@ If we check the ```attatchments``` table we can see that the person also include
 
 ```/private/var/mobile/Library/AddressBook```
 
-A device owner's contacts can be found within ```AddressBook.sqlitedb```. The 'ABPerson' table contains the first and last name, birthday, job, title, nickname ect. The 'ABMultiValue' contains the column 'value' which has the e-mail or phone number of the individual in 'ABPerson'. In the below example, we can see that our siezed device had three contacts:
+A device's contacts can be found within ```AddressBook.sqlitedb```. The 'ABPerson' table contains the person's first and last name, birthday, job, title, nickname ect. The 'ABMultiValue' contains the column 'value' which has the e-mail and/or phone number of the individual in 'ABPerson'. In the below example, we can see that our siezed device had three contacts:
 
 ![](https://i.imgur.com/kQKE7NB.png)
 
