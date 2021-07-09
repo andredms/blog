@@ -60,9 +60,21 @@ If you don't feel like copying the entire ```/mobile``` directory feel free to p
 
 ### Images
 
-```private/var/mobile/media/DCIM```
+```private/var/mobile/Media/DCIM```
 
 Images are located within ```private/var/mobile/media/DCIM```. Photos within the ```100APPLE``` directory indiciate that the photo was taken on the device itself - sequential numbering is used to show the order in which the photos were taken, e.g. IMG_0001 would be the first photo a device took. If there is a number missing in the sequence of photo files, one can assume that the photo was deleted. 
+
+![](https://i.imgur.com/xBKvQQe.png)
+
+We can even view the longitutde and latitude of where the photo was taken by looking at the metadata (on macOS, right click the image > Get Info). 
+
+![](https://i.imgur.com/3Rxqogz.png)
+
+### Deleted Images
+
+```private/var/mobile/Media/PhotoData/Thumbnails```
+
+It's easy to recover deleted photos off a device through using tools such as [iThmb Converter](https://www.ithmbconverter.com/). Simply copy all ```ithmb``` files and convert them from the above directory. 
 
 ![](https://i.imgur.com/xBKvQQe.png)
 
