@@ -1,6 +1,6 @@
 ---
 layout: post
-title: iOS Forensics in 2021
+title: iOS Forensics 
 description: I've been wanting to get some hands-on experience with computer forensics and create a habit out of exploring new data acquisition techniques on devices. This is my first experience in doing so on an old iPhone 7 I picked up off GumTree and performed a factory reset on. There are many different ways to acquire data from a seized device, however this guide will focus on the most common way - [jailbreaking](https://www.kaspersky.com/resource-center/definitions/what-is-jailbreaking).
 ---
 
