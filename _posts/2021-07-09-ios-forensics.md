@@ -52,6 +52,8 @@ We'll now need to find the IP address of our device - to do this, neviate to Set
 
 Open up a terminal on your forensics station and type the following: ```scp -r root@<iphoneIP>:/private/var/mobile/ ~/Desktop``` to copy all files in the ```private/var/mobile``` directory to our forensics station. This directory contains many files that will help us build a case. If prompted for a password, the default is ```alpine```.
 
+![](https://i.imgur.com/0RBxbO8.gif)
+
 # Building a Case
 
 There's a lot to filter through here, however, there are some specific files that are of interest to us. If you don't feel like copying the entire ```/mobile``` directory feel free to pick and choose from below:
