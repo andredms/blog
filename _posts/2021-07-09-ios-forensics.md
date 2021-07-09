@@ -25,7 +25,7 @@ A structured way to organise data. Mobile devices often use SQLite - for example
 A plist (property list) is a data file that stores information on iOS and OSX operating systems. A plsit can store strings, dates, boolean values, numbers and binary values. Browsing history, favourites and configuration data can be stored in a plist.
 
 # Notes
-* In a real world scenario, it may be wise to turn the iPhone on to airplane mode to prevent a third-party from tampering with any evidence through remote access. 
+* In a real world scenario, it may be wise to turn the iPhone on to airplane mode to prevent a third-party from tampering with any evidence through remote access.\ 
 * If a device is passcode protected it'll be a little more challenging to retrieve the data. 
 * I'll be using my own network for this walkthrough, however it's also possible to [set up your own network](https://github.com/tcurdt/iProxy/wiki/Configuring-iProxy) if you don't wish to introduce the seized device on to your own network. 
 
@@ -148,10 +148,10 @@ The call history of an iOS device is located within ```call_history.db```. The '
 Applications such as Camera often store the longitude and latitude of where a photo was taken. The ```consolidated.db``` file contains geolocation data for every cell tower the iOS device utilises. Tools such as [iPhone Tracker](peterwarden.github.com/iPhoneTracker) pull the aforementioned file and provide a graphical display of where the iOS device has been. 
 
 # Tools
-There are a variety of tools, that all use different methods that can be used in a forensics investigation on an iOS device:
-[Scalpel](https://github.com/sleuthkit/scalpel)
+There are a variety of tools, that all use different methods that can be used in a forensics investigation on an iOS device:\
+[Scalpel](https://github.com/sleuthkit/scalpel)\
 [Paraben Device Seizure](https://paraben.com/paraben-for-mobile-forensics/)\
-[EnCase](https://security.opentext.com/encase-mobile-investigator)
+[EnCase](https://security.opentext.com/encase-mobile-investigator)\
 [Mobile Sync Browser](http://mobilesyncbrowser.com/)
 
 # What did I learn?
