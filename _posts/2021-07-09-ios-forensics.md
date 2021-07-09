@@ -56,7 +56,7 @@ Open up a terminal on your forensics station and type the following: ```scp -r r
 
 # Building a Case
 
-If you don't feel like copying the entire ```/mobile``` directory feel free to pick and choose what you download from below:
+If you don't feel like copying the entire ```/mobile``` directory feel free to pick and choose what you download from below. Many of these folders contain metadata (whether it be in the form of a column in a ```.db``` file or timestamp elsewhere) that can help an investigator know when something was created, modified or deleted. This is extremely useful when placing together a timeline of events.
 
 ### Images
 
