@@ -30,7 +30,7 @@ A plist (property list) is a data file that stores information on iOS and OSX op
 * I'll be using my own network for this walkthrough, however it's also possible to [set up your own network](https://github.com/tcurdt/iProxy/wiki/Configuring-iProxy) if you'd like to isolate the device entirely. 
 
 # Setup
-Grab your phone and connect it to your computer with a lightning cable. Open up checkra1n and press ```start```. This will put the device in [DFU mode](https://www.theiphonewiki.com/wiki/DFU_Mode). 
+Grab your phone and connect it to your computer with a lightning cable. Open up checkra1n and press ```Start```. This will put the device in [DFU mode](https://www.theiphonewiki.com/wiki/DFU_Mode). 
 
 ![](https://i.imgur.com/qQsfaul.png)
 
