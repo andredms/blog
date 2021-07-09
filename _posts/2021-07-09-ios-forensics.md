@@ -9,7 +9,7 @@ I'm beginning to delve into computer forensics and hopefully create a habit out 
 Jailbreaking essentially replaces the firmware partition with a hacked version that allows for the installation of tools not normally available (such as OpenSSH). This walkthrough will be on a macOS device using Big Sur. 
 
 # Requirements
-**Equipment:** 
+**Equipment & Software:** 
 * A desktop or laptop to act as our forensics station.
 * An old iPhone (X or lower) to act as our seized device.
 * A lightning cable.
@@ -25,7 +25,8 @@ A structured way to organise data. Mobile devices often use SQLite - for example
 A plist (property list) is a data file that stores information on iOS and OSX operating systems. A plsit can store strings, dates, boolean values, numbers and binary values. Browsing history, favourites and configuration data can be stored in a plist.
 
 # Notes
-* In a real world scenario, it may be wise to turn the iPhone on to airplane mode to prevent a third-party from tampering with any evidence through remote access. * If a device is passcode protected it'll be a little more challenging to retrieve the data. 
+* In a real world scenario, it may be wise to turn the iPhone on to airplane mode to prevent a third-party from tampering with any evidence through remote access. 
+* If a device is passcode protected it'll be a little more challenging to retrieve the data. 
 * I'll be using my own network for this walkthrough, however it's also possible to [set up your own network](https://github.com/tcurdt/iProxy/wiki/Configuring-iProxy) if you don't wish to introduce the seized device on to your own network. 
 
 # Setup
@@ -35,7 +36,7 @@ Grab your phone and connect it to your computer with a lightning cable. Open up 
 
 Follow the instructions until you see something similar to the following. Once checkra1n finishes installing you should be greeted with a regular looking lockscreen. 
 
-![](https://i.imgur.com/qeUlEbf.gifv)
+![](https://i.imgur.com/qeUlEbf.gif)
 
 Scroll to the ```checkra1n``` application on the device's lockscreen and install [Cydia](https://cydia-app.com/). Ensure you are connected to the internet. 
 
