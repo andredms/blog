@@ -66,11 +66,7 @@ Images are located within ```private/var/mobile/media/DCIM```. Photos within the
 
 ![](https://i.imgur.com/xBKvQQe.png)
 
-We can even view the longitutde and latitude of where the photo was taken by looking at the metadata (on macOS, right click the image > Get Info). 
-
-![](https://i.imgur.com/3Rxqogz.png)
-
-Alternatively, you can also use [ExifTool](https://exiftool.org/) on the command-line to find such information: ```exiftool IMG_0002.HEIC | grep GPS```.
+We can even view the longitutde and latitude of where the photo was taken by looking at the metadata with a tool such as [ExifTool](https://exiftool.org/). For example: ```exiftool IMG_0002.HEIC | grep GPS```.
 
 ![](https://i.imgur.com/scalbLl.png)
 
